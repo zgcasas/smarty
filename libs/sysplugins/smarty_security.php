@@ -183,6 +183,13 @@ class Smarty_Security
     public $allow_super_globals = true;
 
     /**
+     * Allow private objects members (starts with _ underscore)
+     *
+     * @var int
+     */
+    public $allow_private_object_attr = false;
+
+    /**
      * max template nesting level
      *
      * @var int

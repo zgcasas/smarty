@@ -3160,7 +3160,8 @@ class Smarty_Internal_Templateparser
     // line 999 "../smarty/lexer/smarty_internal_templateparser.y"
     public function yy_r139()
     {
-        if ($this->security && substr($this->yystack[ $this->yyidx + -1 ]->minor, 0, 1) === '_') {
+        if (!$this->security->allow_private_object_attr
+            && substr($this->yystack[ $this->yyidx + -1 ]->minor, 0, 1) === '_') {
             $this->compiler->trigger_template_error(self::ERR1);
         }
         $this->_retvalue =
