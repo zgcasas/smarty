@@ -195,6 +195,11 @@ abstract class Smarty_Internal_Data
         return $this->ext->getTemplateVars->getTemplateVars($this, $varName, $_ptr, $searchParents);
     }
 
+    public function get_template_vars($varName = null)
+    {
+        return $this->getTemplateVars($varName);
+    }
+
     /**
      * Follow the parent chain an merge template and config variables
      *
